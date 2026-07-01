@@ -4,6 +4,8 @@ A beautiful and fully functional **Music Player** built with vanilla JavaScript 
 
 > **Note**: This is a **portfolio demonstration project**. All songs and assets are for showcase purposes only.
 
+### 🌐 [Visit Demo](https://sara-jafari-developer.github.io/Music-Player-App/)
+
 ## ✨ Features
 
 - **Beautiful Glassmorphism UI** with animated gradient background
