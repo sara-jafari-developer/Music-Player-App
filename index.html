@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player App | Sara Jafari</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-10">
+                <div class="card glass-card text-white">
+                    <div class="row g-0">
+                        <div class="col-md-7 col-lg-8 border-end border-light border-opacity-10 position-relative">
+
+                            <div class="volume-container d-flex align-items-center gap-2 small text-white-50">
+                                <i class="fa-solid fa-volume-low"></i>
+                                <input type="range" id="volume-slider" min="0" max="100"
+                                    value="50">
+                                <i class="fa-solid fa-volume-high"></i>
+                            </div>
+
+                            <div class="card-body p-4 d-flex flex-column h-100">
+                                <header class="d-flex justify-content-between align-items-center mb-4">
+                                    <span class="text-uppercase small fw-bold text-white-50">Now Playing</span>
+                                    <button class="btn btn-link text-white-50"><i
+                                            class="fa-solid fa-ellipsis"></i></button>
+                                </header>
+
+                                <div class="text-center my-auto">
+                                    <div id="cover-art-container" class="cover-art-wrapper mx-auto mb-4">
+                                        <img src="assets/images/songs/Yeganeh.png"
+                                            id="cover-image" class="img-fluid rounded-4 shadow-lg" alt="Album Cover">
+                                    </div>
+
+                                    <div class="track-info">
+                                        <h3 id="track-title" class="card-title fw-bold song-title">Behet Ghol Midam</h3>
+                                        <p id="track-artist" class="card-text text-white-50">Mohsen Yeganeh</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-auto">
+                                    <div class="progress-container mb-3">
+                                        <div class="d-flex justify-content-between small text-white-50 mb-1">
+                                            <span id="current-time">0:00</span>
+                                            <span id="duration">0:00</span>
+                                     </div>
+                                        <div id="progress-container" class="progress bg-light bg-opacity-25"
+                                            role="progressbar" style="height: 6px; cursor: pointer;">
+                                            <div id="progress-fill" class="progress-bar bg-white" style="width: 0%;">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="controls text-center my-3">
+                                        <button id="shuffle-btn" class="btn btn-link text-white-50 mx-1">
+                                            <i class="fa-solid fa-shuffle fa-lg"></i>
+                                        </button>
+                                        <button id="prev-btn" class="btn btn-link text-white mx-2">
+                                            <i class="fa-solid fa-backward-step fa-xl"></i>
+                                        </button>
+                                        <button id="play-btn" class="btn btn-light text-dark rounded-circle mx-2 shadow">
+                                            <i class="fa-solid fa-play fa-xl"></i>
+                                        </button>
+                                        <button id="next-btn" class="btn btn-link text-white mx-2">
+                                            <i class="fa-solid fa-forward-step fa-xl"></i>
+                                        </button>
+                                        <button id="repeat-btn" class="btn btn-link text-white-50 mx-1">
+                                            <i class="fa-solid fa-repeat fa-lg"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 col-lg-4 d-flex flex-column">
+                            <div class="card-body p-4">
+                                <div class="playlist-header d-flex justify-content-between align-items-baseline mb-3">
+                                    <h5 class="fw-bold">Playlist</h5>
+                                    <span class="badge bg-light text-dark bg-opacity-75 fw-normal"></span>
+                                </div>
+                                <ul id="playlist-list" class="list-group list-group-flush overflow-auto glass-scrollbar"
+                                    style="max-height: 450px;">
+                                    <li
+                                        class="list-group-item list-group-item-action bg-transparent text-white border-light border-opacity-10 p-3 active">
+                                        <div class="d-flex w-100 align-items-center">
+                                            <audio data-selected="true" src="assets/music/Mohsen Yeganeh - Behet Ghol Midam (320) (1).mp3"></audio>
+                                            <img src="assets//images/songs/Yeganeh.png" class="rounded" alt="thumb" width="45" height="45">
+                                            <div class="ms-3 flex-grow-1">
+                                                <h6 class="mb-0">Behet Ghol Midam</h6>
+                                                <small class="text-white-50">Mohsen Yeganeh</small>
+                                            </div>
+                                            <i class="fa-solid fa-chart-simple text-white playing-icon"></i>
+                                        </div>
+                                    </li>
+
+                                    <li
+                                        class="list-group-item list-group-item-action bg-transparent text-white border-light border-opacity-10 p-3 ">
+                                        <div class="d-flex w-100 align-items-center">
+                                            <audio data-selected="true" src="assets/music/Homayoun Shajarian - Gerye Kon.mp3"></audio>
+                                            <img src="assets//images/songs/Shajarian.png" class="rounded" alt="thumb" width="45" height="45">
+                                            <div class="ms-3 flex-grow-1">
+                                                <h6 class="mb-0">Gerye Kon</h6>
+                                                <small class="text-white-50">Homayoun Shajarian</small>
+                                            </div>
+                                            <i class="fa-solid fa-chart-simple text-white playing-icon"></i>
+                                        </div>
+                                    </li>
+                                    <li
+                                        class="list-group-item list-group-item-action bg-transparent text-white border-light border-opacity-10 p-3 ">
+                                        <div class="d-flex w-100 align-items-center">
+                                            <audio data-selected="true" src="assets/music/Kenaram Hastio Ama.mp3"></audio>
+                                            <img src="assets//images/songs/Moein.png" class="rounded" alt="thumb" width="45" height="45">
+                                            <div class="ms-3 flex-grow-1">
+                                                <h6 class="mb-0">Kenaram Hastio</h6>
+                                                <small class="text-white-50">Moein</small>
+                                            </div>
+                                            <i class="fa-solid fa-chart-simple text-white playing-icon"></i>
+                                        </div>
+                                    </li>
+                                    <li
+                                        class="list-group-item list-group-item-action bg-transparent text-white border-light border-opacity-10 p-3 ">
+                                        <div class="d-flex w-100 align-items-center">
+                                            <audio data-selected="true" src="assets/music/Shadmehr Aghili - Bi Ehsas.mp3"></audio>
+                                            <img src="assets//images/songs/Shadmehr.png" class="rounded" alt="thumb" width="45" height="45">
+                                            <div class="ms-3 flex-grow-1">
+                                                <h6 class="mb-0">Bi Ehsas</h6>
+                                                <small class="text-white-50">Shadmehr Aghili</small>
+                                            </div>
+                                            <i class="fa-solid fa-chart-simple text-white playing-icon"></i>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="mb-4 mt-4">
+        <p class="text-dark">Inplemented by Sara Jafari</p>
+
+        <ul class="d-flex justify-content-center align-items-center gap-2">
+            <li>
+                <a target="_blank" href="https://github.com/sara-jafari-developer">
+                    <img src="assets/images/github.png" alt="Sara Jafari GitHub | front-end developer">
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
